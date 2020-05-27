@@ -30,8 +30,8 @@ def method_one():
             recent_coding_books_count = len(recent_coding_books)
         else:
             recent_coding_books_count = len(recent_coding_books)
-        
-    return recent_books_count
+        time= format(time.time() - start)
+    return recent_books_count, time
 
 method_one()
 
@@ -43,8 +43,8 @@ def method_two(recent_books, coding_books):
     recent_coding_books = np.intersect1d(recent_books, coding_books)
     
     recent_coding_books_count = len(recent_coding_books)
-    
-    return recent_coding_books_count
+    time = format(time.time() - start)
+    return recent_coding_books_count, time
 
 method_two(recent_books, coding_books)
 
@@ -57,7 +57,9 @@ def method_three(recent_books, coding_books):
     
     recent_coding_books_count = len(recent_coding_books)
     
-    return recent_coding_books_count
+    time = format(time.time() - start)
+    
+    return recent_coding_books_count, time
 
 method_three(recent_books, coding_books)
 
